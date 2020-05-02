@@ -14,9 +14,44 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Ehe-y5-AIO"/>
+                    <connections>
+                        <segue destination="Puz-aO-Lni" kind="show" identifier="S-DETAILS" id="znK-Nk-xXc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="959" y="113"/>
+        </scene>
+        <!--Details View Controller-->
+        <scene sceneID="P1l-kG-iJf">
+            <objects>
+                <viewController id="Puz-aO-Lni" customClass="DetailsViewController" customModule="FlickerApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6Y4-au-9ds">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="mmC-Xp-x41"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="vXW-Ti-mmj"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zvJ-VJ-3pa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1751" y="113"/>
+        </scene>
+        <!--Results Table Controller-->
+        <scene sceneID="VPS-IG-c6W">
+            <objects>
+                <viewController storyboardIdentifier="ResultsTableController" id="dR4-ng-i7k" customClass="ResultsTableController" customModule="FlickerApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="DTv-3D-OBw">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="li2-L9-w6g">
-                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="flickrMainCell" rowHeight="200" id="4Mv-Gi-jej">
@@ -54,60 +89,27 @@
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
-                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="x8f-bA-lJd"/>
-                                    <outlet property="delegate" destination="BYZ-38-t0r" id="tIw-j5-u4k"/>
+                                    <outlet property="dataSource" destination="dR4-ng-i7k" id="R4d-xI-Uvh"/>
+                                    <outlet property="delegate" destination="dR4-ng-i7k" id="0D7-IG-8q7"/>
                                 </connections>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <constraints>
-                            <constraint firstItem="li2-L9-w6g" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="6Bp-Sp-Q06"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="li2-L9-w6g" secondAttribute="bottom" id="UKJ-vo-oV5"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="li2-L9-w6g" secondAttribute="trailing" id="dUC-Th-pI0"/>
-                            <constraint firstItem="li2-L9-w6g" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="mJM-Vq-qFK"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="Ehe-y5-AIO"/>
-                    <connections>
-                        <outlet property="tableView" destination="li2-L9-w6g" id="AY6-Rf-Xee"/>
-                        <segue destination="Puz-aO-Lni" kind="show" identifier="S-DETAILS" id="znK-Nk-xXc"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="959" y="113"/>
-        </scene>
-        <!--Details View Controller-->
-        <scene sceneID="P1l-kG-iJf">
-            <objects>
-                <viewController id="Puz-aO-Lni" customClass="DetailsViewController" customModule="FlickerApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="6Y4-au-9ds">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="mmC-Xp-x41"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="vXW-Ti-mmj"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="zvJ-VJ-3pa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1751" y="113"/>
-        </scene>
-        <!--Results Table Controller-->
-        <scene sceneID="VPS-IG-c6W">
-            <objects>
-                <viewController storyboardIdentifier="ResultsTableController" id="dR4-ng-i7k" customClass="ResultsTableController" customModule="FlickerApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="DTv-3D-OBw">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="NtU-0b-ri9" firstAttribute="bottom" secondItem="li2-L9-w6g" secondAttribute="bottom" id="EnF-9B-Xbh"/>
+                            <constraint firstAttribute="trailing" secondItem="li2-L9-w6g" secondAttribute="trailing" id="TNY-SR-Op9"/>
+                            <constraint firstItem="li2-L9-w6g" firstAttribute="leading" secondItem="NtU-0b-ri9" secondAttribute="leading" id="X1T-aq-f4Y"/>
+                            <constraint firstItem="li2-L9-w6g" firstAttribute="top" secondItem="NtU-0b-ri9" secondAttribute="top" id="a5j-NS-dgt"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="NtU-0b-ri9"/>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="li2-L9-w6g" id="saI-8x-TIk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="duE-oM-vlw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2645" y="78"/>
+            <point key="canvasLocation" x="958" y="-579"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="wjn-g6-a1j">

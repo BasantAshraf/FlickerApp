@@ -26,16 +26,11 @@ class HomeViewController: UIViewController, UISearchControllerDelegate, UISearch
         print( isActive())
     }
     
-    
-    @IBOutlet weak var tableView: UITableView!
-    
     private var searchController: UISearchController!
     private var resultsTableController: ResultsTableController!
     
     override func viewDidLoad() {
-        super.viewDidLoad()
-        tableView.reloadData()
-        
+        super.viewDidLoad()        
         setupSearchBar()
         print( isActive())
         callApi()
@@ -81,27 +76,6 @@ extension HomeViewController: UISearchBarDelegate{
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         
-    }
-    
-}
-
-extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "flickrMainCell")
-        return cell ?? UITableViewCell()
-    }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 200
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "S-DETAILS", sender: nil)
     }
     
 }
