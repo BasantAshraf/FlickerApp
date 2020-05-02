@@ -18,25 +18,31 @@ enum HomeViewState {
 // unit test
 // uitest
 // calling flickr api
+// remove scene delegate
+// Result introduced in swift 5
 
 class HomeViewController: UIViewController, UISearchControllerDelegate, UISearchResultsUpdating{
     func updateSearchResults(for searchController: UISearchController) {
-       print( isActive())
+        print( isActive())
     }
     
-
+    
     @IBOutlet weak var tableView: UITableView!
     
     private var searchController: UISearchController!
     private var resultsTableController: ResultsTableController!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.reloadData()
-
+        
         setupSearchBar()
         print( isActive())
-
+        callApi()
+    }
+    
+    func callApi() {
+        NetworkManager().getLatestLoans()
     }
     
     func isActive() -> Bool {
@@ -46,25 +52,25 @@ class HomeViewController: UIViewController, UISearchControllerDelegate, UISearch
     func setupSearchBar() {
         
         resultsTableController =
-                  self.storyboard?.instantiateViewController(withIdentifier: "ResultsTableController") as? ResultsTableController
+            self.storyboard?.instantiateViewController(withIdentifier: "ResultsTableController") as? ResultsTableController
         searchController = UISearchController(searchResultsController: resultsTableController)
-         searchController.delegate = self
-         searchController.searchResultsUpdater = self
-         searchController.searchBar.autocapitalizationType = .none
-//         searchController.dimsBackgroundDuringPresentation = false
-         searchController.searchBar.delegate = self // Monitor when the search button is tapped.
-
-         // Place the search bar in the navigation bar.
-         navigationItem.searchController = searchController
-         
-         // Make the search bar always visible.
-         navigationItem.hidesSearchBarWhenScrolling = false
+        searchController.delegate = self
+        searchController.searchResultsUpdater = self
+        searchController.searchBar.autocapitalizationType = .none
+        //         searchController.dimsBackgroundDuringPresentation = false
+        searchController.searchBar.delegate = self // Monitor when the search button is tapped.
+        
+        // Place the search bar in the navigation bar.
+        navigationItem.searchController = searchController
+        
+        // Make the search bar always visible.
+        navigationItem.hidesSearchBarWhenScrolling = false
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
     }
-
+    
 }
 
 extension HomeViewController: UISearchBarDelegate{
@@ -86,7 +92,7 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-         let cell = tableView.dequeueReusableCell(withIdentifier: "flickrMainCell")
+        let cell = tableView.dequeueReusableCell(withIdentifier: "flickrMainCell")
         return cell ?? UITableViewCell()
     }
     
