@@ -20,6 +20,11 @@ enum HomeViewState {
 // calling flickr api
 // remove scene delegate
 // Result introduced in swift 5
+// animation transition from results to details
+//  constant file + image url + api key
+// custom cell
+// read me file
+// MARK
 
 class HomeViewController: UIViewController, UISearchControllerDelegate, UISearchResultsUpdating{
     func updateSearchResults(for searchController: UISearchController) {
