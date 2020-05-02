@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  DetailsViewController.swift
 //  FlickerApp
 //
 //  Created by Bassant Ashraf on 5/1/20.
@@ -8,13 +8,11 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class DetailsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+
     }
-
-
+    
 }
-
