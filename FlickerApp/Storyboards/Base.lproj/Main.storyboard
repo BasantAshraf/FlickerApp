@@ -27,14 +27,14 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="FlickrCell" id="SkN-B3-lhj" customClass="FlickrCell" customModule="FlickerApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="175" height="175"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="3do-Ai-AcA">
-                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="175" height="175"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5p1-uR-wxk">
-                                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="5p1-uR-wxk">
+                                                    <rect key="frame" x="0.0" y="0.0" width="175" height="175"/>
                                                 </imageView>
                                             </subviews>
                                             <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -83,27 +83,41 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="TBg-6u-Sqk">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DFh-pI-BDX">
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
-                            </imageView>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="50G-yF-1Sx">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="774"/>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="50G-yF-1Sx" secondAttribute="bottom" id="CFH-UE-Gy9"/>
+                                    <constraint firstItem="50G-yF-1Sx" firstAttribute="height" secondItem="DFh-pI-BDX" secondAttribute="height" id="EY4-Lw-L8k"/>
+                                    <constraint firstItem="50G-yF-1Sx" firstAttribute="top" secondItem="DFh-pI-BDX" secondAttribute="top" id="Xdo-Ba-gda"/>
+                                    <constraint firstItem="50G-yF-1Sx" firstAttribute="width" secondItem="DFh-pI-BDX" secondAttribute="width" id="bef-GD-nqS"/>
+                                    <constraint firstItem="50G-yF-1Sx" firstAttribute="leading" secondItem="DFh-pI-BDX" secondAttribute="leading" id="mm3-LJ-JH7"/>
+                                    <constraint firstAttribute="trailing" secondItem="50G-yF-1Sx" secondAttribute="trailing" id="sjK-Cd-oQL"/>
+                                </constraints>
+                            </scrollView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="mmC-Xp-x41" firstAttribute="bottom" secondItem="TBg-6u-Sqk" secondAttribute="bottom" id="6yG-2m-RiM"/>
-                            <constraint firstItem="TBg-6u-Sqk" firstAttribute="leading" secondItem="mmC-Xp-x41" secondAttribute="leading" id="I5H-EJ-Zpe"/>
-                            <constraint firstItem="mmC-Xp-x41" firstAttribute="trailing" secondItem="TBg-6u-Sqk" secondAttribute="trailing" id="K4Z-bW-qLl"/>
-                            <constraint firstItem="TBg-6u-Sqk" firstAttribute="top" secondItem="mmC-Xp-x41" secondAttribute="top" id="dhY-Ry-ZI5"/>
+                            <constraint firstItem="mmC-Xp-x41" firstAttribute="bottom" secondItem="DFh-pI-BDX" secondAttribute="bottom" id="41R-OD-aTW"/>
+                            <constraint firstItem="DFh-pI-BDX" firstAttribute="top" secondItem="mmC-Xp-x41" secondAttribute="top" id="HlB-3C-PkS"/>
+                            <constraint firstItem="mmC-Xp-x41" firstAttribute="trailing" secondItem="DFh-pI-BDX" secondAttribute="trailing" id="oTE-50-SCH"/>
+                            <constraint firstItem="DFh-pI-BDX" firstAttribute="leading" secondItem="mmC-Xp-x41" secondAttribute="leading" id="zPk-DV-ApT"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="mmC-Xp-x41"/>
                     </view>
                     <navigationItem key="navigationItem" id="vXW-Ti-mmj"/>
                     <connections>
-                        <outlet property="imageView" destination="TBg-6u-Sqk" id="ExC-ll-SJM"/>
+                        <outlet property="imageView" destination="50G-yF-1Sx" id="D0b-YK-NHp"/>
+                        <outlet property="scrollView" destination="DFh-pI-BDX" id="kkj-RH-vi0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zvJ-VJ-3pa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1751" y="113"/>
+            <point key="canvasLocation" x="1750.7246376811595" y="112.5"/>
         </scene>
         <!--Search History Controller-->
         <scene sceneID="VPS-IG-c6W">
@@ -139,4 +153,7 @@
             <point key="canvasLocation" x="137.68115942028987" y="112.5"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="placeholder" width="175" height="175"/>
+    </resources>
 </document>
