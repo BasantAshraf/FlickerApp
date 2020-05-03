@@ -9,10 +9,14 @@
 import UIKit
 
 class DetailsViewController: UIViewController {
+    
+    var photoModel: Photo!
+    @IBOutlet weak var imageView: UIImageView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        imageView.kf.setImage(with: photoModel.imageUrl)
+        self.title = photoModel.title
     }
     
 }

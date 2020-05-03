@@ -27,7 +27,9 @@ class HomeViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
+        if let detailsVC = segue.destination as? DetailsViewController, let index = sender as? Int {
+            detailsVC.photoModel = homeViewModel.photos[index]
+        }
     }
     
 }
@@ -89,7 +91,7 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
     
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "S-DETAILS", sender: nil)
+        performSegue(withIdentifier: "S-DETAILS", sender: indexPath.row)
     }
     
 }

@@ -82,10 +82,24 @@
                     <view key="view" contentMode="scaleToFill" id="6Y4-au-9ds">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="TBg-6u-Sqk">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="mmC-Xp-x41" firstAttribute="bottom" secondItem="TBg-6u-Sqk" secondAttribute="bottom" id="6yG-2m-RiM"/>
+                            <constraint firstItem="TBg-6u-Sqk" firstAttribute="leading" secondItem="mmC-Xp-x41" secondAttribute="leading" id="I5H-EJ-Zpe"/>
+                            <constraint firstItem="mmC-Xp-x41" firstAttribute="trailing" secondItem="TBg-6u-Sqk" secondAttribute="trailing" id="K4Z-bW-qLl"/>
+                            <constraint firstItem="TBg-6u-Sqk" firstAttribute="top" secondItem="mmC-Xp-x41" secondAttribute="top" id="dhY-Ry-ZI5"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="mmC-Xp-x41"/>
                     </view>
                     <navigationItem key="navigationItem" id="vXW-Ti-mmj"/>
+                    <connections>
+                        <outlet property="imageView" destination="TBg-6u-Sqk" id="ExC-ll-SJM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zvJ-VJ-3pa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
