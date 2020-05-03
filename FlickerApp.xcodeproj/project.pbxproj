@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -22,6 +22,7 @@
 		788CFCDE245D32A300F5798F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788CFCDD245D32A300F5798F /* Constants.swift */; };
 		788CFCE2245D40CF00F5798F /* FlickrCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788CFCE0245D40CF00F5798F /* FlickrCell.swift */; };
 		788CFCE5245DE16200F5798F /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788CFCE4245DE16100F5798F /* HomeViewModel.swift */; };
+		788CFCE8245EC60500F5798F /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 788CFCE7245EC60500F5798F /* Kingfisher */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				788CFCE8245EC60500F5798F /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -222,6 +224,7 @@
 			);
 			name = FlickerApp;
 			packageProductDependencies = (
+				788CFCE7245EC60500F5798F /* Kingfisher */,
 			);
 			productName = FlickerApp;
 			productReference = 788CFC92245BD4CD00F5798F /* FlickerApp.app */;
@@ -295,6 +298,9 @@
 				Base,
 			);
 			mainGroup = 788CFC89245BD4CD00F5798F;
+			packageReferences = (
+				788CFCE6245EC60500F5798F /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
 			productRefGroup = 788CFC93245BD4CD00F5798F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -670,6 +676,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		788CFCE6245EC60500F5798F /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.13.4;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		788CFCE7245EC60500F5798F /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 788CFCE6245EC60500F5798F /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 788CFC8A245BD4CD00F5798F /* Project object */;
 }

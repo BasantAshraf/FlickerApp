@@ -7,23 +7,18 @@
 //
 
 import UIKit
+import Kingfisher
 
 class FlickrCell: UICollectionViewCell {
-
-    @IBOutlet weak var imageView: UIImageView!
     
-    var photoModel: Photo? {
-        didSet {
-            guard photoModel != nil else {
-                return
-            }
-        }
-       // imageView.image = 
-    }
+    @IBOutlet weak var imageView: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        imageView.contentMode = .scaleAspectFit
+        imageView.contentMode = .scaleAspectFill
     }
-
+    
+    func configure(photo: Photo) {
+        imageView.kf.setImage(with: photo.imageUrl)
+    }
 }
