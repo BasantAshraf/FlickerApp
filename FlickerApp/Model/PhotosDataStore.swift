@@ -1,5 +1,5 @@
 //
-//  Photos.swift
+//  PhotosDataStore.swift
 //  FlickerApp
 //
 //  Created by Bassant Ashraf on 5/2/20.

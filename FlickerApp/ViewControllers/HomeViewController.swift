@@ -8,30 +8,10 @@
 
 import UIKit
 
-enum HomeViewState {
-    case loading
-    case noInternet
-    case empty
-    case results
-}
-// paging
-// open details with image + zoom + pinch
-// save past search results
-// unit test
-// uitest
-// calling flickr api
-// remove scene delegate
-// Result introduced in swift 5
-// animation transition from results to details
-//  constant file + image url + api key
-// custom cell
-// read me file
-// MARK
-
 class HomeViewController: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
-
+    var homeViewModel: HomeViewModel!
       private let itemsPerRow: CGFloat = 3
       private let sectionInsets = UIEdgeInsets(top: 50.0, left: 20.0, bottom: 50.0, right: 20.0)
       private let reuseIdentifier = "FlickrCell"
@@ -43,11 +23,7 @@ class HomeViewController: UIViewController {
         setupSearchBar()
         collectionView.reloadData()
         print( isActive())
-        callApi()
-    }
-    
-    func callApi() {
-        NetworkManager().getLatestLoans()
+        homeViewModel = HomeViewModel()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

@@ -18,9 +18,10 @@
 		788CFCC6245BDBAD00F5798F /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788CFCC5245BDBAD00F5798F /* DetailsViewController.swift */; };
 		788CFCC8245BEDD800F5798F /* SearchHistoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788CFCC7245BEDD800F5798F /* SearchHistoryController.swift */; };
 		788CFCD6245D29EF00F5798F /* PhotosDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788CFCD5245D29EF00F5798F /* PhotosDataStore.swift */; };
-		788CFCDC245D2D8600F5798F /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788CFCDB245D2D8600F5798F /* NetworkManager.swift */; };
+		788CFCDC245D2D8600F5798F /* SearchWebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788CFCDB245D2D8600F5798F /* SearchWebService.swift */; };
 		788CFCDE245D32A300F5798F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788CFCDD245D32A300F5798F /* Constants.swift */; };
 		788CFCE2245D40CF00F5798F /* FlickrCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788CFCE0245D40CF00F5798F /* FlickrCell.swift */; };
+		788CFCE5245DE16200F5798F /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788CFCE4245DE16100F5798F /* HomeViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,9 +59,10 @@
 		788CFCC5245BDBAD00F5798F /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		788CFCC7245BEDD800F5798F /* SearchHistoryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchHistoryController.swift; sourceTree = "<group>"; };
 		788CFCD5245D29EF00F5798F /* PhotosDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosDataStore.swift; sourceTree = "<group>"; };
-		788CFCDB245D2D8600F5798F /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		788CFCDB245D2D8600F5798F /* SearchWebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchWebService.swift; sourceTree = "<group>"; };
 		788CFCDD245D32A300F5798F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		788CFCE0245D40CF00F5798F /* FlickrCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickrCell.swift; sourceTree = "<group>"; };
+		788CFCE4245DE16100F5798F /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +155,7 @@
 			isa = PBXGroup;
 			children = (
 				788CFC99245BD4CD00F5798F /* HomeViewController.swift */,
+				788CFCE4245DE16100F5798F /* HomeViewModel.swift */,
 				788CFCC5245BDBAD00F5798F /* DetailsViewController.swift */,
 				788CFCC7245BEDD800F5798F /* SearchHistoryController.swift */,
 				788CFCE0245D40CF00F5798F /* FlickrCell.swift */,
@@ -197,7 +200,7 @@
 		788CFCDA245D2CD000F5798F /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				788CFCDB245D2D8600F5798F /* NetworkManager.swift */,
+				788CFCDB245D2D8600F5798F /* SearchWebService.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -338,8 +341,9 @@
 				788CFC9A245BD4CD00F5798F /* HomeViewController.swift in Sources */,
 				788CFCC8245BEDD800F5798F /* SearchHistoryController.swift in Sources */,
 				788CFC96245BD4CD00F5798F /* AppDelegate.swift in Sources */,
+				788CFCE5245DE16200F5798F /* HomeViewModel.swift in Sources */,
 				788CFCE2245D40CF00F5798F /* FlickrCell.swift in Sources */,
-				788CFCDC245D2D8600F5798F /* NetworkManager.swift in Sources */,
+				788CFCDC245D2D8600F5798F /* SearchWebService.swift in Sources */,
 				788CFCD6245D29EF00F5798F /* PhotosDataStore.swift in Sources */,
 				788CFC98245BD4CD00F5798F /* SceneDelegate.swift in Sources */,
 				788CFCC6245BDBAD00F5798F /* DetailsViewController.swift in Sources */,
