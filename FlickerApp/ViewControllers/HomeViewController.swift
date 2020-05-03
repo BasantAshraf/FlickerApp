@@ -42,14 +42,12 @@ extension HomeViewController: UISearchControllerDelegate, UISearchResultsUpdatin
     }
     
     func setupSearchBar() {
-        
         searchHistoryController =
             self.storyboard?.instantiateViewController(withIdentifier: "SearchHistoryController") as? SearchHistoryController
         searchController = UISearchController(searchResultsController: searchHistoryController)
         searchController.delegate = self
         searchController.searchResultsUpdater = self
         searchController.searchBar.autocapitalizationType = .none
-        //         searchController.dimsBackgroundDuringPresentation = false
         searchController.searchBar.delegate = self
         navigationItem.searchController = searchController
         navigationItem.hidesSearchBarWhenScrolling = false
@@ -65,12 +63,11 @@ extension HomeViewController: UISearchControllerDelegate, UISearchResultsUpdatin
 // MARK: -  SearchBar Delegate
 extension HomeViewController: UISearchBarDelegate{
     
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        
-    }
-    
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        
+        self.searchController.dismiss(animated: true, completion: nil)
+        if let keyword = searchBar.text {
+            homeViewModel.loadPhotos(keyword: keyword)
+        }
     }
     
 }
@@ -118,7 +115,8 @@ extension HomeViewController : UICollectionViewDelegateFlowLayout {
     
 }
 
-extension HomeViewController: HomeDelegates {
+// MARK: - Home Delegate to viewModel
+extension HomeViewController: HomeDelegate {
     func showLoader() {
         
     }

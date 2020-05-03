@@ -19,6 +19,6 @@ class FlickrCell: UICollectionViewCell {
     }
     
     func configure(photo: Photo) {
-        imageView.kf.setImage(with: photo.imageUrl)
+        imageView.kf.setImage(with: photo.imageUrl, placeholder: Constants.placeholderImage)
     }
 }

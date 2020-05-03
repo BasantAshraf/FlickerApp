@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol HomeDelegates {
+protocol HomeDelegate {
     func showLoader()
     func hideLoader()
     func didFetchData()
@@ -23,16 +23,15 @@ class HomeViewModel {
             delegate.didFetchData()
         }
     }
-    var delegate:HomeDelegates
+    var delegate:HomeDelegate
     
-    init(delegate: HomeDelegates) {
+    init(delegate: HomeDelegate) {
         self.delegate = delegate
-        loadPhotos()
     }
     
-    func loadPhotos() {
+    func loadPhotos(keyword: String) {
         delegate.showLoader()
-        SearchWebService.getLatestLoans(keyword: "kittens", PageNumber: 1) { (result) in
+        SearchWebService.getLatestLoans(keyword: keyword, PageNumber: 1) { (result) in
             self.delegate.hideLoader()
             switch result {
             case .success(let data):
