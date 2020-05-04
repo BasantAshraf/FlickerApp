@@ -63,11 +63,7 @@ class HomeViewController: UIViewController {
             searchHistoryVC.delegate = self
         }
     }
-    
-//    @IBAction func loadMore(_ sender: Any) {
-//        homeViewModel.loadMore()
-//    }
-    
+
 }
 
 // MARK: -  SearchBar Delegate, SearchHistoryDelegate
@@ -147,7 +143,6 @@ extension HomeViewController : UICollectionViewDelegateFlowLayout {
         let widthPerItem = availableWidth / itemsPerRow
         return CGSize(width: widthPerItem, height: widthPerItem)
     }
-    
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return sectionInsets
