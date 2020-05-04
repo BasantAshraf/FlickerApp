@@ -39,7 +39,8 @@ class HomeViewController: UIViewController {
 }
 
 // MARK: -  SearchBar Delegate
-extension HomeViewController: UISearchControllerDelegate, UISearchResultsUpdating {
+extension HomeViewController: UISearchControllerDelegate {
+    //UISearchResultsUpdating {
     
     func isActive() -> Bool {
         return searchController.isActive
@@ -50,16 +51,16 @@ extension HomeViewController: UISearchControllerDelegate, UISearchResultsUpdatin
             self.storyboard?.instantiateViewController(withIdentifier: "SearchHistoryController") as? SearchHistoryController
         searchController = UISearchController(searchResultsController: searchHistoryController)
         searchController.delegate = self
-        searchController.searchResultsUpdater = self
+        // searchController.searchResultsUpdater = self
         searchController.searchBar.autocapitalizationType = .none
         searchController.searchBar.delegate = self
         navigationItem.searchController = searchController
         navigationItem.hidesSearchBarWhenScrolling = false
     }
     
-    func updateSearchResults(for searchController: UISearchController) {
-        print( isActive())
-    }
+    //    func updateSearchResults(for searchController: UISearchController) {
+    //        print( isActive())
+    //    }
     
 }
 
@@ -71,6 +72,7 @@ extension HomeViewController: UISearchBarDelegate{
         homeViewModel.currentPage = 1
         self.searchController.dismiss(animated: true, completion: nil)
         if let keyword = searchBar.text {
+            CacheManager.shared.cache(keyword: keyword)
             homeViewModel.loadPhotos(keyword: keyword)
         }
     }

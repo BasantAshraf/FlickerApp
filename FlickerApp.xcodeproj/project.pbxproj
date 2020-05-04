@@ -24,6 +24,7 @@
 		788CFCE5245DE16200F5798F /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788CFCE4245DE16100F5798F /* HomeViewModel.swift */; };
 		788CFCE8245EC60500F5798F /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 788CFCE7245EC60500F5798F /* Kingfisher */; };
 		788CFCEE245F6FB800F5798F /* ImageZoomable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788CFCED245F6FB800F5798F /* ImageZoomable.swift */; };
+		788CFCF2245F9FF000F5798F /* CacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788CFCF1245F9FF000F5798F /* CacheManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +67,7 @@
 		788CFCE0245D40CF00F5798F /* FlickrCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickrCell.swift; sourceTree = "<group>"; };
 		788CFCE4245DE16100F5798F /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		788CFCED245F6FB800F5798F /* ImageZoomable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageZoomable.swift; sourceTree = "<group>"; };
+		788CFCF1245F9FF000F5798F /* CacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -189,6 +191,7 @@
 			isa = PBXGroup;
 			children = (
 				788CFCDD245D32A300F5798F /* Constants.swift */,
+				788CFCF1245F9FF000F5798F /* CacheManager.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -359,6 +362,7 @@
 				788CFC9A245BD4CD00F5798F /* HomeViewController.swift in Sources */,
 				788CFCC8245BEDD800F5798F /* SearchHistoryController.swift in Sources */,
 				788CFC96245BD4CD00F5798F /* AppDelegate.swift in Sources */,
+				788CFCF2245F9FF000F5798F /* CacheManager.swift in Sources */,
 				788CFCE5245DE16200F5798F /* HomeViewModel.swift in Sources */,
 				788CFCE2245D40CF00F5798F /* FlickrCell.swift in Sources */,
 				788CFCDC245D2D8600F5798F /* SearchWebService.swift in Sources */,
