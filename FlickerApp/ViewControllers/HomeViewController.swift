@@ -32,6 +32,10 @@ class HomeViewController: UIViewController {
         }
     }
     
+    @IBAction func loadMore(_ sender: Any) {
+        homeViewModel.loadMore()
+    }
+    
 }
 
 // MARK: -  SearchBar Delegate

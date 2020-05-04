@@ -13,15 +13,16 @@ import Foundation
 enum NetworkError: Error {
     case badUrl
     case emptyData
+    case errorParsingData
 }
 
 class SearchWebService: NSObject {
         
-    static func getLatestLoans(keyword: String, PageNumber: Int, completion: @escaping (Result<[Photo], NetworkError>) -> Void) {
+    static func getLatestPhotos(keyword: String, PageNumber: Int, completion: @escaping (Result<Photos, NetworkError>) -> Void) {
         guard let url = URL(string: Constants.flickrSearchUrl + "&text=\(keyword)" + "&page=\(PageNumber)") else {
             return
         }
-        
+
         let request = URLRequest(url: url)
         let task = URLSession.shared.dataTask(with: request, completionHandler: { (data, response, error) -> Void in
             
@@ -30,20 +31,23 @@ class SearchWebService: NSObject {
                 return
             }
             
-            let photos = self.parseJsonData(data: data)
+            guard let photos = self.parseJsonData(data: data), let photosArray = photos.photo else {
+                completion(.failure(.errorParsingData))
+                return
+            }
             DispatchQueue.main.async {
-                completion(photos.isEmpty ? .failure(.emptyData) : .success(photos))
+                completion(photosArray.isEmpty ? .failure(.emptyData) : .success(photos))
             }
         })
         task.resume()
     }
     
-    private static func parseJsonData(data: Data) -> [Photo] {
-        var photos = [Photo]()
+    private static func parseJsonData(data: Data) -> Photos? {
+        var photos: Photos?
         let decoder = JSONDecoder()
         do {
             let photosDataStore = try decoder.decode(PhotosDataStore.self, from: data)
-            photos = photosDataStore.photos?.photo ?? []
+            photos = photosDataStore.photos
         } catch {
             print(error)
         }

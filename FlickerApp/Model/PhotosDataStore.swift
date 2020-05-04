@@ -19,8 +19,8 @@ struct PhotosDataStore : Codable {
 }
 
 struct Photos: Codable {
-    let page: Int?
-    let pages : Int?
+    let page: Int
+    let pages : Int
     let photo : [Photo]?
     
     enum CodingKeys: String, CodingKey {
