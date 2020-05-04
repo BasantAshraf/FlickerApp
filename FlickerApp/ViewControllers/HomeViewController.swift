@@ -40,8 +40,6 @@ class HomeViewController: UIViewController {
 
 // MARK: -  SearchBar Delegate
 extension HomeViewController: UISearchControllerDelegate {
-    //UISearchResultsUpdating {
-    
     func isActive() -> Bool {
         return searchController.isActive
     }
@@ -49,34 +47,37 @@ extension HomeViewController: UISearchControllerDelegate {
     func setupSearchBar() {
         searchHistoryController =
             self.storyboard?.instantiateViewController(withIdentifier: "SearchHistoryController") as? SearchHistoryController
+        searchHistoryController.delegate = self
         searchController = UISearchController(searchResultsController: searchHistoryController)
         searchController.delegate = self
-        // searchController.searchResultsUpdater = self
         searchController.searchBar.autocapitalizationType = .none
         searchController.searchBar.delegate = self
         navigationItem.searchController = searchController
         navigationItem.hidesSearchBarWhenScrolling = false
     }
     
-    //    func updateSearchResults(for searchController: UISearchController) {
-    //        print( isActive())
-    //    }
-    
 }
 
 
-// MARK: -  SearchBar Delegate
-extension HomeViewController: UISearchBarDelegate{
+// MARK: -  SearchBar Delegate, SearchHistoryDelegate
+extension HomeViewController: UISearchBarDelegate, SearchHistoryDelegate{
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         homeViewModel.currentPage = 1
         self.searchController.dismiss(animated: true, completion: nil)
         if let keyword = searchBar.text {
-            CacheManager.shared.cache(keyword: keyword)
-            homeViewModel.loadPhotos(keyword: keyword)
+            search(keyword: keyword)
         }
     }
     
+    func didSelect(keyword: String) {
+        search(keyword: keyword)
+    }
+    
+    func search(keyword: String) {
+        CacheManager.shared.cache(keyword: keyword)
+        homeViewModel.loadPhotos(keyword: keyword)
+    }
 }
 
 // MARK: - Collection View Datasource

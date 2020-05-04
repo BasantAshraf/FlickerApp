@@ -8,9 +8,14 @@
 
 import UIKit
 
+protocol SearchHistoryDelegate {
+    func didSelect(keyword: String)
+}
+
 class SearchHistoryController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
+    var delegate: SearchHistoryDelegate!
     
     var cachedKeyword = [String]() {
         didSet {
@@ -47,7 +52,7 @@ extension SearchHistoryController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let selectedKeyword = cachedKeyword[indexPath.row]
-        
+        delegate.didSelect(keyword: selectedKeyword)
         self.dismiss(animated: true, completion: nil)
     }
     
