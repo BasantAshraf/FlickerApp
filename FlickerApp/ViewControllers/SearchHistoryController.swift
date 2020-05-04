@@ -10,9 +10,11 @@ import UIKit
 
 class SearchHistoryController: UIViewController {
     
+    @IBOutlet weak var tableView: UITableView!
+    
     var cachedKeyword = [String]() {
         didSet {
-            reloadData()
+            tableView.reloadData()
         }
     }
     
@@ -26,7 +28,28 @@ class SearchHistoryController: UIViewController {
         self.cachedKeyword = keywords
     }
     
-    func reloadData() {
-        print("reload")
+}
+
+extension SearchHistoryController: UITableViewDataSource, UITableViewDelegate {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        cachedKeyword.count
     }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let keyword = cachedKeyword[indexPath.row]
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell") else {
+            return UITableViewCell(style: .default, reuseIdentifier: "cell")
+        }
+        cell.textLabel?.text = keyword
+        return cell
+        
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let selectedKeyword = cachedKeyword[indexPath.row]
+        
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    
 }
