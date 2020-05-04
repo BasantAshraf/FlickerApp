@@ -30,6 +30,10 @@ class SearchHistoryController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        updateView()
+    }
+    
+    func updateView() {
         let keywords = CacheManager.shared.getCachedKeywords()
         self.cachedKeyword = keywords
     }
@@ -39,6 +43,7 @@ class SearchHistoryController: UIViewController {
 //MARK: make table scrollable above keyboard
 extension SearchHistoryController {
     @objc func keyboardWillShow(_ notification:Notification) {
+        updateView()
         if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
             tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: keyboardSize.height, right: 0)
         }
@@ -72,6 +77,5 @@ extension SearchHistoryController: UITableViewDataSource, UITableViewDelegate {
         delegate.didSelect(keyword: selectedKeyword)
         self.dismiss(animated: true, completion: nil)
     }
-    
     
 }

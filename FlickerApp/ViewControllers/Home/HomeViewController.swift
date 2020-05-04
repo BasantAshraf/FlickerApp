@@ -52,7 +52,7 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()        
         setupSearchBar()
-        collectionView.reloadData()
+        showEmptyScreen()
         homeViewModel = HomeViewModel(delegate: self)
     }
     
@@ -180,8 +180,8 @@ extension HomeViewController: HomeDelegate {
     }
     
     func showEmptyScreen() {
-        let errorView = UIView()
-        errorView.backgroundColor = .purple
+        let errorView = UIImageView(image: UIImage(named: "emptyState"))
+        errorView.contentMode = .scaleAspectFit
         collectionView.backgroundView = errorView
     }
     
