@@ -123,6 +123,7 @@
 				788CFCD2245D21BD00F5798F /* AppDelegate */,
 				788CFCD3245D21CC00F5798F /* Storyboards */,
 				788CFCD1245D21A900F5798F /* ViewControllers */,
+				788CFD15245FD3C500F5798F /* ViewModel */,
 				788CFCD7245D2A2000F5798F /* Model */,
 				788CFCDA245D2CD000F5798F /* Network */,
 				788CFCD4245D21E100F5798F /* Helper */,
@@ -160,11 +161,9 @@
 		788CFCD1245D21A900F5798F /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				788CFD16245FD3D500F5798F /* Home */,
+				788CFD17245FD3DE00F5798F /* Seaarch History */,
 				788CFCEF245F724700F5798F /* Details */,
-				788CFC99245BD4CD00F5798F /* HomeViewController.swift */,
-				788CFCE0245D40CF00F5798F /* FlickrCell.swift */,
-				788CFCE4245DE16100F5798F /* HomeViewModel.swift */,
-				788CFCC7245BEDD800F5798F /* SearchHistoryController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -219,6 +218,32 @@
 				788CFCED245F6FB800F5798F /* ImageZoomable.swift */,
 			);
 			path = Details;
+			sourceTree = "<group>";
+		};
+		788CFD15245FD3C500F5798F /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				788CFCE4245DE16100F5798F /* HomeViewModel.swift */,
+			);
+			name = ViewModel;
+			path = ViewControllers/ViewModel;
+			sourceTree = "<group>";
+		};
+		788CFD16245FD3D500F5798F /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				788CFC99245BD4CD00F5798F /* HomeViewController.swift */,
+				788CFCE0245D40CF00F5798F /* FlickrCell.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		788CFD17245FD3DE00F5798F /* Seaarch History */ = {
+			isa = PBXGroup;
+			children = (
+				788CFCC7245BEDD800F5798F /* SearchHistoryController.swift */,
+			);
+			path = "Seaarch History";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

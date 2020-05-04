@@ -16,6 +16,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="30C-DV-G94">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <connections>
+                                    <segue destination="dR4-ng-i7k" kind="embed" id="ELm-4N-hWd"/>
+                                </connections>
+                            </containerView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="k1V-kx-Cu6">
                                 <rect key="frame" x="0.0" y="88" width="414" height="808"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -60,7 +66,11 @@
                         <constraints>
                             <constraint firstItem="k1V-kx-Cu6" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="0sf-3l-qgc"/>
                             <constraint firstAttribute="trailing" secondItem="k1V-kx-Cu6" secondAttribute="trailing" id="6X9-8T-On8"/>
+                            <constraint firstItem="30C-DV-G94" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="79H-Rw-26J"/>
+                            <constraint firstItem="30C-DV-G94" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="A4e-C3-YBh"/>
                             <constraint firstAttribute="bottom" secondItem="k1V-kx-Cu6" secondAttribute="bottom" id="Z7L-UP-Dyl"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="30C-DV-G94" secondAttribute="trailing" id="b9I-27-OCu"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="30C-DV-G94" secondAttribute="bottom" id="iU1-Rn-9QH"/>
                             <constraint firstItem="k1V-kx-Cu6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="uKT-VQ-C0r"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -74,6 +84,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="k1V-kx-Cu6" id="xfh-2l-dQo"/>
+                        <outlet property="searchHistoryContainerView" destination="30C-DV-G94" id="JFM-kQ-8CV"/>
                         <segue destination="Puz-aO-Lni" kind="show" identifier="S-DETAILS" id="znK-Nk-xXc"/>
                     </connections>
                 </viewController>
@@ -123,18 +134,18 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zvJ-VJ-3pa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1750.7246376811595" y="112.5"/>
+            <point key="canvasLocation" x="1867" y="113"/>
         </scene>
         <!--Search History Controller-->
         <scene sceneID="VPS-IG-c6W">
             <objects>
                 <viewController storyboardIdentifier="SearchHistoryController" id="dR4-ng-i7k" customClass="SearchHistoryController" customModule="FlickerApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DTv-3D-OBw">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="774"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="k9Y-bS-lWQ">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="730"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="uRA-ea-sbq">
@@ -167,7 +178,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="duE-oM-vlw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="958" y="-579"/>
+            <point key="canvasLocation" x="957" y="-654"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="wjn-g6-a1j">

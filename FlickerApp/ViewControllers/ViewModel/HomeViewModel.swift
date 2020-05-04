@@ -51,8 +51,9 @@ class HomeViewModel {
                     self.photos.append(contentsOf: photoResults)
                 }
             case .failure(let error):
+                self.photos = []
                 switch error {
-                case .badUrl, .errorParsingData:
+                case .badUrl, .errorParsingData, .serverError:
                     self.delegate.errorFetchingData()
                 case .emptyData:
                     self.delegate.emptyDataStore()
