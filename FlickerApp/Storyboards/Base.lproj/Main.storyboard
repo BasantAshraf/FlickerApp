@@ -75,13 +75,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Ehe-y5-AIO">
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="wdv-IC-ki1">
-                            <connections>
-                                <action selector="loadMore:" destination="BYZ-38-t0r" id="5El-Ys-tBw"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="Ehe-y5-AIO"/>
                     <connections>
                         <outlet property="collectionView" destination="k1V-kx-Cu6" id="xfh-2l-dQo"/>
                         <outlet property="searchHistoryContainerView" destination="30C-DV-G94" id="JFM-kQ-8CV"/>

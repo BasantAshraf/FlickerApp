@@ -64,9 +64,9 @@ class HomeViewController: UIViewController {
         }
     }
     
-    @IBAction func loadMore(_ sender: Any) {
-        homeViewModel.loadMore()
-    }
+//    @IBAction func loadMore(_ sender: Any) {
+//        homeViewModel.loadMore()
+//    }
     
 }
 
@@ -75,6 +75,8 @@ extension HomeViewController: UISearchBarDelegate, SearchHistoryDelegate{
     
     func setupSearchBar() {
         navigationItem.titleView = searchBar
+        searchBar.showsCancelButton = true
+        searchBar.placeholder = "Search any keyword"
         searchBar.delegate = self
     }
     
@@ -86,6 +88,12 @@ extension HomeViewController: UISearchBarDelegate, SearchHistoryDelegate{
         if let keyword = searchBar.text {
             search(keyword: keyword)
         }
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        currentState = .results
+        searchBar.searchTextField.resignFirstResponder()
+        self.dismiss(animated: true, completion: nil)
     }
     
     func didSelect(keyword: String) {
