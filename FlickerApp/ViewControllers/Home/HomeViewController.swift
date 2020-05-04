@@ -129,6 +129,12 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
         performSegue(withIdentifier: "S-DETAILS", sender: indexPath.row)
     }
     
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        if indexPath.row == homeViewModel.photos.count - 1 {
+            homeViewModel.loadMore()
+        }
+    }
+    
 }
 
 // MARK: - Collection View Flow Layout Delegate

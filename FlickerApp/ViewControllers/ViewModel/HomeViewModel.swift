@@ -36,7 +36,9 @@ class HomeViewModel {
     }
     
     func loadPhotos(keyword: String) {
-        delegate.showLoader()
+        if self.currentPage == 1 {
+            delegate.showLoader()
+        }
         SearchWebService.getLatestPhotos(keyword: keyword, PageNumber: currentPage) { (result) in
             self.delegate.hideLoader()
             switch result {
