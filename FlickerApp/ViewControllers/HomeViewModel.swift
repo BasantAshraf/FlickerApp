@@ -25,9 +25,9 @@ class HomeViewModel {
     }
     var delegate:HomeDelegate
     var currentPage:Int = 1
-    var numberOfPages: Int = 1
-    var keyword: String = ""
-    var hasReachedEndResults: Bool {
+    private var numberOfPages: Int = 1
+    private var keyword: String = ""
+    private var hasReachedEndResults: Bool {
         return currentPage == numberOfPages
     }
     

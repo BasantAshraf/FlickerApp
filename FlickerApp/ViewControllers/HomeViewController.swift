@@ -68,6 +68,7 @@ extension HomeViewController: UISearchControllerDelegate, UISearchResultsUpdatin
 extension HomeViewController: UISearchBarDelegate{
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        homeViewModel.currentPage = 1
         self.searchController.dismiss(animated: true, completion: nil)
         if let keyword = searchBar.text {
             homeViewModel.loadPhotos(keyword: keyword)
