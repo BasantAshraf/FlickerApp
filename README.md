@@ -9,7 +9,7 @@ https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=a4f285
 
 
 - App build in MVVM.
-- Only one library is used (KingFisher)
+- Only one library is used (KingFisher) installed using swift package manager.
 - Network: URLSession + Codable + Result
 - SearchBar
 - Infinite loading to search results
