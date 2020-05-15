@@ -39,28 +39,36 @@ class HomeViewModel {
         if self.currentPage == 1 {
             delegate.showLoader()
         }
-        SearchWebService.getLatestPhotos(keyword: keyword, PageNumber: currentPage) { (result) in
-            self.delegate.hideLoader()
+        SearchWebService.getLatestPhotos(keyword: keyword, PageNumber: currentPage) { [weak self] (result) in
+            self?.delegate.hideLoader()
             switch result {
             case .success(let data):
-                let photoResults = data.photo ?? []
-                if self.currentPage == 1 {
-                    self.keyword = keyword
-                    self.numberOfPages = data.pages
-                    self.photos = photoResults
-                } else {
-                    // append results if load more, not the first page
-                    self.photos.append(contentsOf: photoResults)
-                }
+                self?.handleServiceSuccess(data, keyword: keyword)
             case .failure(let error):
-                self.photos = []
-                switch error {
-                case .badUrl, .errorParsingData, .serverError:
-                    self.delegate.errorFetchingData()
-                case .emptyData:
-                    self.delegate.emptyDataStore()
-                }
+                self?.handleServiceError(error)
             }
+        }
+    }
+    
+    fileprivate func handleServiceSuccess(_ data: Photos, keyword: String) {
+        let photoResults = data.photo ?? []
+        if self.currentPage == 1 {
+            self.keyword = keyword
+            self.numberOfPages = data.pages
+            self.photos = photoResults
+        } else {
+            // append results if load more, not the first page
+            self.photos.append(contentsOf: photoResults)
+        }
+    }
+    
+    fileprivate func handleServiceError(_ error: NetworkError) {
+        self.photos = []
+        switch error {
+        case .badUrl, .errorParsingData, .serverError:
+            self.delegate.errorFetchingData()
+        case .emptyData:
+            self.delegate.emptyDataStore()
         }
     }
     

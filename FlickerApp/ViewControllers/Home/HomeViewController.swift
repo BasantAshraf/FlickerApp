@@ -25,6 +25,8 @@ class HomeViewController: UIViewController {
     private let sectionInsets = UIEdgeInsets(top: 50.0, left: 20.0, bottom: 50.0, right: 20.0)
     private let reuseIdentifier = "FlickrCell"
     private var searchBar = UISearchBar()
+    private var searchHistoryViewController: SearchHistoryController!
+
     var currentState: screenState = .emptyData {
         didSet {
             var isResultsHidden = false
@@ -61,6 +63,7 @@ class HomeViewController: UIViewController {
             detailsVC.photoModel = homeViewModel.photos[index]
         } else if let searchHistoryVC = segue.destination as? SearchHistoryController {
             searchHistoryVC.delegate = self
+            searchHistoryViewController = searchHistoryVC
         }
     }
 
@@ -78,6 +81,7 @@ extension HomeViewController: UISearchBarDelegate, SearchHistoryDelegate{
     
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
         currentState = .searching
+        searchHistoryViewController.updateView()
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
